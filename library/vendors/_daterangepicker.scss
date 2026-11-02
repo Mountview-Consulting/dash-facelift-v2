@@ -1,0 +1,17 @@
+// =============================================================================
+// Date Range Picker
+// =============================================================================
+
+$active-bg: #6c757d;
+
+.daterangepicker {
+    td.active.start-date,
+    td.active.end-date {
+        background-color: $active-bg !important;
+    }
+
+    td.active.off.start-date,
+    td.active.off.end-date {
+        background-color: rgba($active-bg, 0.5) !important;
+    }
+}

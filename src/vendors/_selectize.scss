@@ -1,0 +1,12 @@
+// =============================================================================
+// Selectize
+// =============================================================================
+
+.selectize-input .item {
+    font-size: 0.85rem !important;
+
+    &.active i {
+        color: var(--white) !important;
+        padding: 0.15rem 0.5rem !important;
+    }
+}

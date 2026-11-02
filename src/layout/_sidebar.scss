@@ -1,0 +1,77 @@
+// =============================================================================
+// Sidebar menu
+// -----------------------------------------------------------------------------
+// Fresh start. The v1 port is in library/layout/_sidebar.scss to lift from.
+// =============================================================================
+
+@use '../abstracts/breakpoints' as bp;
+
+.sidebar#sidebar-menu {
+    margin-top: 0.5rem;
+    padding-top: 0 !important;
+    // Tint layered over a solid base, so a translucent --t-sidebar-bg-color
+    // still hides the content when the sidebar overlays it on mobile
+    background-color: var(--t-color-base-light);
+    background-image: linear-gradient(var(--t-sidebar-bg-color), var(--t-sidebar-bg-color));
+    border-right: 1px solid rgba(0, 0, 0, .125);
+    font-size: 1rem;
+
+    > div {
+        height: 100%;
+        overflow-y: auto;
+
+        > ul.nav {
+            margin-top: 0.5rem;
+        }
+    }
+
+    &.sidebar-showing {
+        width: var(--t-sidebar-width) !important;
+    }
+
+    // Below md: full-width overlay on top of the content (_main.scss stops
+    // offsetting the content at the same breakpoint)
+    @include bp.down(md) {
+        &.sidebar-showing {
+            width: calc(100% - 1rem) !important;
+            z-index: 99;
+        }
+    }
+
+    .nav-item {
+        font-size: var(--t-sidebar-font-size);
+
+        .nav-link {
+            font-size: inherit !important;
+            font-weight: 400 !important;
+            color: var(--t-sidebar-text-color);
+
+            &:hover {
+                background-color: var(--t-sidebar-hover-bg-color);
+            }
+        }
+
+        &.active {
+            background-color: transparent !important;
+
+            > .nav-link {
+                background-color: var(--t-sidebar-active-bg-color);
+                border-left: var(--t-sidebar-active-border-color) solid var(--t-sidebar-active-border-width);
+                padding-left: calc(1rem - var(--t-sidebar-active-border-width));
+            }
+        }
+
+        .sub-menu {
+            background-color: transparent !important;
+            padding-left: 0;
+            list-style: none;
+
+            > .nav-item {
+                margin: 0;
+                > .nav-link {
+                    padding-left: 1.5rem;
+                }
+            }
+        }
+    }
+}

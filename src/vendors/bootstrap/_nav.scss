@@ -1,0 +1,60 @@
+.nav {
+    $root: &;
+
+    &-sm {
+        .nav-link {
+            padding: .25rem .5rem;
+            font-size: .85rem;
+        }
+    }
+
+
+    &-pills {
+
+        #{$root}-item {
+            button {
+                border-top-left-radius: 0.25rem;
+                border-bottom-left-radius: 0.25rem;
+                border: 1px solid rgba(0, 0, 0, .125);
+                border-radius: 0;
+                border-left-width: 0;
+                background-color: var(--white);
+
+                &.active {
+                    background-color: var(--primary);
+                    border-color: var(--primary);
+                }
+                &:not(.active):hover {
+                    background-color: rgba(0, 0, 0, .125);
+                }
+            }
+
+            &:first-child { 
+                button {
+                    border-top-left-radius: 0.25rem;
+                    border-bottom-left-radius: 0.25rem;
+                    border-left-width: 1px;
+                }
+            }
+            &:last-child {
+                button {
+                    border-top-right-radius: 0.25rem;
+                    border-bottom-right-radius: 0.25rem;
+                }
+            }
+        }
+    }
+
+    &-sm {
+        .nav-link {
+            padding: .25rem .5rem;
+            font-size: .85rem;
+        }
+    }
+    
+    .nav-link {
+        &.form-control {
+            padding: .25rem .75rem;
+        }
+    }
+}

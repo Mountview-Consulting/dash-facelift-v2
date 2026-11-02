@@ -1,0 +1,14 @@
+// =============================================================================
+// Legacy — page-specific fixes for old markup. Delete as pages are retired.
+// =============================================================================
+
+@use '../abstracts/breakpoints' as bp;
+
+#map {
+    width: calc(100% - var(--t-sidebar-width) - 30px) !important;
+    top: calc(var(--t-navbar-height) + 4rem);
+
+    @include bp.down(nav) {
+        width: calc(100% - 30px) !important;
+    }
+}

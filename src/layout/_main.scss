@@ -1,0 +1,25 @@
+// =============================================================================
+// Main content area
+// -----------------------------------------------------------------------------
+// Keeps the content offset in step with the navbar height and sidebar width.
+// =============================================================================
+
+@use '../abstracts/breakpoints' as bp;
+
+.main-container {
+    top: var(--t-header-height) !important;
+
+    .content-area {
+        background-color: var(--t-main-bg-color);
+
+        &.sidebar-showing {
+            left: 0 !important;
+
+            // Below md the sidebar overlays the content instead (_sidebar.scss)
+            @include bp.up(md) {
+                left: var(--t-sidebar-width) !important;
+            }
+        }
+    }
+}
+

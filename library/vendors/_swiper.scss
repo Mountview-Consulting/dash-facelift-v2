@@ -1,0 +1,23 @@
+// =============================================================================
+// Swiper
+// =============================================================================
+
+.swiper {
+    --swiper-navigation-size: 2rem;
+    --swiper-navigation-color: var(--secondary);
+
+    &-button-prev,
+    &-button-next {
+        background-color: var(--white) !important;
+        border-radius: 0.25rem;
+        width: var(--swiper-navigation-size) !important;
+
+        &::after {
+            font-size: calc(var(--swiper-navigation-size) * 0.5) !important;
+        }
+
+        &:not(.swiper-button-disabled):hover {
+            opacity: 0.7;
+        }
+    }
+}

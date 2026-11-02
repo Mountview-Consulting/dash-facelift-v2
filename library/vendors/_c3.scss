@@ -1,0 +1,40 @@
+// =============================================================================
+// C3.js / D3 charts
+// =============================================================================
+
+.c3-axis {
+    &.c3-axis-x,
+    &.c3-axis-y,
+    &.c3-axis-y2 {
+        line, path {
+            stroke: var(--t-color-gray-200) !important;
+        }
+
+        .tick text {
+            font-weight: 400 !important;
+            color: var(--t-color-gray-400) !important;
+        }
+    }
+}
+
+.c3-grid line {
+    stroke: var(--t-color-gray-100) !important;
+    stroke-dasharray: 0;
+}
+
+.c3-tooltip-container .c3-tooltip {
+    opacity: 0.95;
+
+    tr {
+        border: 1px solid rgba(0, 0, 0, .125);
+    }
+
+    th {
+        background-color: var(--gray-dark);
+        color: var(--white);
+    }
+
+    td {
+        border-left: 1px solid rgba(0, 0, 0, .125);
+    }
+}

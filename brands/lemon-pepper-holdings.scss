@@ -1,0 +1,28 @@
+// =============================================================================
+// Lemon Pepper Holdings
+// -----------------------------------------------------------------------------
+// Brand tokens only. Anything not set here falls back to src/tokens/_defaults.
+// =============================================================================
+
+@use '../src/abstracts/breakpoints' as bp;
+@use '../src/facelift';
+
+:root {
+    // Brand palette
+    --brand-black:   #000;
+    --brand-white:   #fff;
+    --brand-opal:    #026051;
+    --brand-opal-uk: #00a78a;
+    --brand-opal-us: #006938;
+
+    // Header
+    --t-header-bg-color:     var(--brand-black);
+    --t-header-border-color: var(--brand-opal-uk);
+    --t-header-border-width: 6px;
+    --t-header-height:       3.5rem;
+    --t-header-text-color:   var(--brand-white);
+
+    // Sidebar
+    --t-sidebar-active-border-color:    var(--brand-opal-uk);
+    --t-sidebar-active-border-width:    6px;
+}

@@ -1,0 +1,22 @@
+// =============================================================================
+// WordPress page templates
+// =============================================================================
+
+@use '../abstracts/breakpoints' as bp;
+
+// Default template — centred, max-width container
+body.page-template-default {
+    #mv-dash-content {
+        @include bp.up(lg)   { max-width: 960px; }
+        @include bp.up(xl)   { max-width: 1140px; }
+        @include bp.up(xxl)  { max-width: 1320px; }
+        @include bp.up(xxxl) { max-width: 1500px; }
+    }
+
+    #mv-dash-content .row:first-child + hr + .row {
+        margin: 0 !important;
+    }
+}
+
+// Frameless template — full width, no overrides yet
+// .page-template-frameless {}

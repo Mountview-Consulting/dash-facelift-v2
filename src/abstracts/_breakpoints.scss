@@ -1,0 +1,40 @@
+// =============================================================================
+// Breakpoints
+// -----------------------------------------------------------------------------
+// Single source of truth for media queries. Mirrors Bootstrap 4 plus the
+// dashboard's own navbar collapse point.
+//
+//      @use '../abstracts/breakpoints' as bp;
+//
+//      @include bp.up(md)     { … }   // min-width: 768px
+//      @include bp.down(md)   { … }   // max-width: 767.98px
+// =============================================================================
+
+@use 'sass:map';
+
+$breakpoints: (
+    sm:  576px,
+    md:  768px,
+    lg:  992px,
+    xl:  1200px,
+    xxl: 1400px,
+    xxxl: 1600px,
+    nav: 1067px,    // dashboard navbar shrinks below this
+) !default;
+
+@function get($name) {
+    @if not map.has-key($breakpoints, $name) {
+        @error "Unknown breakpoint `#{$name}`. Expected one of: #{map.keys($breakpoints)}";
+    }
+    @return map.get($breakpoints, $name);
+}
+
+@mixin up($name) {
+    @media (min-width: get($name)) { @content; }
+}
+
+// Stops 0.02px short so up(md) and down(md) never both match at exactly 768px.
+@mixin down($name) {
+    $max: get($name) - 0.02px;   // worked out first: editor linters can't parse maths inside @media
+    @media (max-width: $max) { @content; }
+}

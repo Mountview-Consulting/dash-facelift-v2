@@ -1,0 +1,101 @@
+// =============================================================================
+// Header / top navbar
+// =============================================================================
+
+@use '../abstracts/breakpoints' as bp;
+
+header > .navbar {
+    background-color: var(--t-header-bg-color) !important;
+    border-bottom: var(--t-header-border) !important;
+    min-height: var(--t-navbar-height);
+    align-items: center;
+
+    .brand-title {
+        font-size: 25px;
+        font-weight: 600 !important;
+        line-height: 1.2;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        height: 100%;
+        margin-top: -3px !important;
+
+        @include bp.down(nav) {
+            font-size: 18px;
+            margin-top: -2px !important;
+        }
+
+        @media (max-width: 767px) {
+            font-size: 16px;
+        }
+    }
+}
+
+header .brand-logo {
+    display: block;
+    margin: calc((var(--t-navbar-height) - var(--t-navbar-logo-height)) / 2) 0;
+    height: var(--t-navbar-logo-height);
+}
+
+.navbar {
+    .navbar-brand {
+        display: none !important;
+    }
+
+    .navbar-text,
+    .navbar-nav .nav-link,
+    .nav-link#user-dropdown {
+        color: var(--t-header-color) !important;
+    }
+
+    @media (max-width: 767px) {
+        .navbar-collapse {
+            position: fixed;
+            z-index: 1;
+            top: 3rem;
+            left: 0;
+            width: 100%;
+            background-color: var(--t-header-bg2-color);
+            padding: 0 1rem;
+        }
+
+        .dropdown-menu {
+            margin-bottom: 1rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .fa.fa-bars,
+        .fa.fa-user {
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+    }
+
+    .btn[data-target="#header-menu"] {
+        color: var(--t-header-color) !important;
+        border-color: transparent !important;
+    }
+}
+
+#user-dropdown {
+    padding-right: 0;
+}
+
+// ── Sidebar toggle ──────────────────────────────────────────────────────────
+
+#sidebar-toggler {
+    background-color: transparent !important;
+    color: var(--t-header-color) !important;
+    border-color: transparent !important;
+    font-size: 1.2rem;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    margin-left: -0.25rem;
+
+    &:focus {
+        box-shadow: 0 0 0 .2rem var(--t-color-secondary) !important;
+    }
+}

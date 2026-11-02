@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="dashfaceliftv2">Dash Facelift v2</h1>
+
+<p>CSS overrides that modernise the Bootstrap 4 dashboard until the new theme is ready.
+Each brand compiles to a <strong>single self-contained CSS file</strong> that gets pasted into WordPress.</p>
+
+<h2 id="layout">Layout</h2>
+
+<pre><code>brands/           One entry file per brand: tokens only. These are the only files that compile.
+  lemon-pepper-holdings.scss
+  _template.scss  Copy this to start a new brand.
+src/              The live framework. All partials; nothing here compiles on its own.
+  abstracts/      Breakpoints, scales. Outputs no CSS.
+  tokens/         _defaults.scss — every --t-* custom property with its default value.
+  base/           Element defaults (body, a, hr).
+  layout/         Header and sidebar (fresh start), plus main content offsets.
+  _facelift.scss  Pulls everything together, in cascade order.
+library/          Ported v1 partials, NOT compiled. Lift into src/ when needed (see library/README.md).
+dist/             Compiled CSS, one file per brand. This is what gets pasted into WordPress.
+preview/          index.html — the dashboard shell plus basic elements, with a brand picker.
+js/               util.js (share page, query string helpers).
+</code></pre>
+
+<p>The build starts deliberately small. Header and sidebar are being redesigned from scratch; everything
+else from v1 sits in <code>library/</code> until a client needs it.</p>
+
+<h2 id="howthemingworks">How theming works</h2>
+
+<ul>
+<li><code>src/tokens/_defaults.scss</code> defines every token on <code>:where(:root)</code>, which has <strong>zero specificity</strong>, so a
+brand&#8217;s <code>:root</code> always wins no matter where it comes in the file.</li>
+<li>A brand file sets only the tokens that differ from the defaults.</li>
+<li>Components read tokens with a plain <code>var(--t-…)</code> (no inline fallbacks). The defaults file is the one
+place to look.</li>
+</ul>
+
+<h2 id="codekitsetup">CodeKit setup</h2>
+
+<ol>
+<li>Add the <code>dash-facelift-v2</code> folder to CodeKit as a new project.</li>
+<li><strong>Project settings → Sass:</strong> compiler is Dart Sass (the default). Output style: <em>Expanded</em> (easier to
+read once pasted) or <em>Compressed</em> (smaller). <strong>Turn source maps off</strong>: a <code>sourceMappingURL</code> comment
+is useless once the CSS is pasted.</li>
+<li><strong>Project settings → Autoprefixer:</strong> on. The browserslist from v1 still works
+(<code>&gt;0.2%, last 2 versions, Firefox ESR, not dead</code>).</li>
+<li>For each file in <code>brands/</code> (not <code>_template.scss</code>), set the output path to <code>dist/&lt;brand&gt;.css</code>. CodeKit
+skips underscore partials automatically, so nothing in <code>src/</code> or <code>library/</code> should be set to compile.</li>
+<li>Open <code>preview/index.html</code> with CodeKit&#8217;s preview server to see changes live.</li>
+</ol>
+
+<h2 id="addingabrand">Adding a brand</h2>
+
+<ol>
+<li>Copy <code>brands/_template.scss</code> to <code>brands/&lt;brand-name&gt;.scss</code>.</li>
+<li>Uncomment and set the tokens that differ.</li>
+<li>Add the brand to the <code>&lt;select&gt;</code> in <code>preview/index.html</code>.</li>
+<li>In CodeKit, set its output to <code>dist/&lt;brand-name&gt;.css</code>.</li>
+</ol>
+
+<h2 id="rulesofthumb">Rules of thumb</h2>
+
+<ul>
+<li><strong>New colour or size a brand might change?</strong> Add a <code>--t-*</code> token to <code>_defaults.scss</code> and use it.</li>
+<li><strong>Media queries:</strong> use <code>@include bp.up(md)</code> / <code>bp.down(md)</code> from <code>abstracts/breakpoints</code>. Don&#8217;t
+hard-code pixel values. <code>down(md)</code> stops at 767.98px, so it never overlaps <code>up(md)</code>.</li>
+<li><strong>Lengths in tokens:</strong> write <code>0px</code>, not <code>0</code>. A unitless <code>0</code> inside <code>calc()</code> makes the whole
+declaration invalid.</li>
+<li><strong><code>!important</code>:</strong> only in <code>utilities/</code>, or when beating an inline style or a library&#8217;s <code>!important</code>.
+Add a comment saying which.</li>
+<li><strong>Overriding a library?</strong> Put it in <code>src/vendors/</code>. <strong>Building our own component?</strong> Put it in <code>src/components/</code>.
+Check <code>library/</code> first; it may already exist.</li>
+</ul>
+
+<h2 id="nextsteps">Next steps</h2>
+
+<ul>
+<li>[ ] Finish the header and sidebar redesign in <code>src/layout/</code>.</li>
+<li>[ ] Decide whether links and buttons should use the brand colour (they&#8217;re Bootstrap blue for now).</li>
+<li>[ ] Lift components from <code>library/</code> as the dashboard needs them.</li>
+<li>[ ] Introduce semantic tokens (surface, text, border, accent) on top of the raw colour tokens.</li>
+</ul>
+
+</body>
+</html>
+

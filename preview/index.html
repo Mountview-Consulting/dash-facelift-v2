@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dash Facelift Preview</title>
+
+    <!-- Same stack as the dashboard: Bootstrap 4 + Font Awesome 4 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Brand CSS — swapped by the picker below -->
+    <link id="facelift" rel="stylesheet" href="../dist/lemon-pepper-holdings.css">
+
+    <!-- Preview-only: approximates the dash-core layout so header/sidebar sit right -->
+    <style>
+        .preview-bar { position: fixed; bottom: 1rem; right: 1rem; z-index: 2000; background: #fff; padding: .5rem .75rem; border-radius: .5rem; box-shadow: 0 2px 12px rgba(0,0,0,.2); font-size: .85rem; }
+        header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
+        .main-container { position: fixed; left: 0; right: 0; bottom: 0; }
+        .sidebar { position: absolute; top: 0; bottom: 0; left: 0; overflow: hidden; border-right: 1px solid; }
+        .sidebar .nav { flex-direction: column; flex-wrap: nowrap; height: 100%; }
+        .content-area { position: absolute; top: 0; right: 0; bottom: 0; overflow-y: auto; padding: 1.5rem; }
+        .preview-section { margin-bottom: 2rem; }
+        .preview-section > h3 { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: #888; margin-bottom: .75rem; }
+    </style>
+</head>
+<body class="page-template-default">
+
+<div class="preview-bar">
+    <label class="mb-0 mr-1" for="brand">Brand</label>
+    <select id="brand" class="form-control form-control-sm d-inline-block w-auto">
+        <option selected>lemon-pepper-holdings</option>
+    </select>
+</div>
+
+<header>
+    <nav class="navbar navbar-dark">
+        <button id="sidebar-toggler" class="btn"><i class="fa fa-bars"></i></button>
+        <div class="brand-title text-white flex-grow-1">Dash</div>
+        <span class="navbar-text"><i class="fa fa-user"></i> Jo Bloggs</span>
+    </nav>
+</header>
+
+<div class="main-container">
+    <div id="sidebar-menu" class="sidebar sidebar-showing">
+        <div class="menu-sidebar-menu-container">
+            <ul id="menu-sidebar-menu" class="nav">
+                <li class="nav-item active"><a class="nav-link" href="#"><i class="fa fa-home"></i> <span>Home</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-line-chart"></i> <span>Sales</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-users"></i> <span>Labour</span></a>
+                    <ul class="sub-menu">
+                        <li class="nav-item"><a class="nav-link" href="#"><span>Rota</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><span>Timesheets</span></a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-cutlery"></i> <span>Menu</span></a></li>
+                <li class="nav-item menu-item-is-split"><a class="nav-link" href="#"><i class="fa fa-cog"></i> <span>Settings</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-sign-out"></i> <span>Log out</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content-area sidebar-showing">
+        <div id="mv-dash-content" class="container-fluid mx-auto">
+            <div class="row"><div class="col"><h2><i class="fa fa-home"></i>Home</h2></div></div>
+            <hr>
+
+            <section class="preview-section">
+                <h3>Typography</h3>
+                <h1>Heading 1</h1>
+                <h2>Heading 2</h2>
+                <h4>Heading 4</h4>
+                <p>Body text with a <a href="#">link</a>, <strong>strong</strong> and <em>emphasis</em>.</p>
+            </section>
+
+            <section class="preview-section">
+                <h3>Buttons</h3>
+                <div class="d-flex flex-wrap align-items-center" style="gap: .5rem">
+                    <button class="btn btn-primary">Primary</button>
+                    <button class="btn btn-secondary">Secondary</button>
+                    <button class="btn btn-primary btn-sm">Small</button>
+                </div>
+            </section>
+
+            <section class="preview-section">
+                <h3>Forms</h3>
+                <div class="row" style="max-width: 640px">
+                    <div class="col"><select class="form-control"><option>Select a site…</option></select></div>
+                    <div class="col"><input type="search" class="form-control" placeholder="Search"></div>
+                </div>
+                <div class="form-check mt-2">
+                    <input class="form-check-input" type="checkbox" id="chk"><label class="form-check-label" for="chk">Checkbox</label>
+                </div>
+            </section>
+
+            <section class="preview-section">
+                <h3>Card</h3>
+                <div class="card" style="max-width: 640px">
+                    <div class="card-header"><a href="#">Card header link</a></div>
+                    <div class="card-body">Card body</div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function () {
+        var select = document.getElementById('brand');
+        var link = document.getElementById('facelift');
+        var saved = null;
+        try { saved = localStorage.getItem('facelift-brand'); } catch (e) {}
+        if (saved) { select.value = saved; link.href = '../dist/' + saved + '.css'; }
+        select.addEventListener('change', function () {
+            link.href = '../dist/' + select.value + '.css';
+            try { localStorage.setItem('facelift-brand', select.value); } catch (e) {}
+        });
+    })();
+</script>
+</body>
+</html>

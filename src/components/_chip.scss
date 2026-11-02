@@ -1,0 +1,153 @@
+// =============================================================================
+// Chips
+// -----------------------------------------------------------------------------
+// A chip is a compact, inline element representing a selected value, tag, or
+// filter. Chips can carry an icon, a dropdown trigger button, and a close
+// button. Themeable via the --chip-* custom properties below; intended to be applied
+// to selectize items later.
+//
+// Structure:
+//
+//      <span class="chip">
+//          <i class="fa fa-tag chip-icon"></i>                 <!-- optional icon -->
+//          <span class="chip-label">Value</span>               <!-- label text -->
+//          <button class="chip-action chip-action-filter">     <!-- dropdown trigger -->
+//              <i class="fa fa-chevron-down"></i>
+//          </button>
+//          <button class="chip-action chip-action-remove">     <!-- close -->
+//              <i class="fa fa-times"></i>
+//          </button>
+//      </span>
+//
+//      <span class="chip chip-filtered">…</span>               <!-- highlighted state -->
+//      <span class="chip chip-active">…</span>                 <!-- active state -->
+//      <span class="chip chip-disabled">…</span>               <!-- disabled state -->
+//      <span class="chip chip-dragging">…</span>               <!-- dragging state -->
+//      <span class="chip-placeholder"></span>                  <!-- drag drop placeholder -->
+// =============================================================================
+
+// ── Tokens ────────────────────────────────────────────────────────────────────
+// CSS custom properties, so a brand can restyle chips by setting e.g.
+// .chip { --chip-bg: #fde; } — no recompile needed.
+
+:where(.chip, .chip-placeholder) {
+    --chip-bg:                 #efefef;
+    --chip-color:              #343a40;
+    --chip-border-radius:      calc(0.25rem - 1px);
+    --chip-font-size:          0.85rem;
+    --chip-font-weight:        normal;
+    --chip-padding-y:          0.1rem;
+    --chip-padding-x:          0.4rem;
+    --chip-margin-right:       0.2rem;
+    --chip-margin-bottom:      0.2rem;
+    --chip-border-color:       #dee2e6;
+    --chip-icon-font-size:     0.7rem;
+    --chip-button-icon-size:   0.5rem;
+    --chip-active-bg:          color-mix(in srgb, var(--chip-bg), #000 8%);
+    --chip-filtered-outline:   #ffc107;
+    --chip-placeholder-width:  80px;
+    --chip-placeholder-height: 24px;
+    --chip-placeholder-bg:     #e8f0fe;
+    --chip-placeholder-border: #6ea8fe;
+}
+
+// ── Base ──────────────────────────────────────────────────────────────────────
+
+.chip {
+    display:          inline-flex;
+    align-items:      center;
+    background-color: var(--chip-bg);
+    color:            var(--chip-color);
+    border-radius:    var(--chip-border-radius);
+    font-size:        var(--chip-font-size);
+    font-weight:      var(--chip-font-weight);
+    padding:          var(--chip-padding-y) var(--chip-padding-x);
+    margin:           0 var(--chip-margin-right) var(--chip-margin-bottom) 0;
+    white-space:      nowrap;
+    border:           0 solid var(--chip-border-color);
+    user-select:      none;
+    position:         relative;
+    cursor:           grab;
+
+    // ── Icon ─────────────────────────────────────────────────────────────────
+
+    &-icon,
+    > .fa {
+        font-size:    var(--chip-icon-font-size);
+        margin-right: 0.25rem;
+    }
+
+    // ── Label ────────────────────────────────────────────────────────────────
+
+    &-label {
+        // Inherits from .chip
+    }
+
+    // ── Action buttons ────────────────────────────────────────────────────────
+
+    &-action,
+    > button {
+        border:           none;
+        background-color: transparent;
+        color:            inherit;
+        text-decoration:  none;
+        display:          inline-flex;
+        align-items:      center;
+        padding:          var(--chip-padding-y) var(--chip-padding-x);
+        border-left:      1px solid var(--chip-border-color);
+        cursor:           pointer;
+        line-height:      1;
+
+        &:hover {
+            opacity: 0.5;
+        }
+
+        &:last-child {
+            margin-right: calc(var(--chip-padding-x) * -1);
+        }
+
+        &:first-of-type {
+            margin-left: var(--chip-padding-x);
+        }
+
+        .fa {
+            font-size: var(--chip-button-icon-size);
+        }
+    }
+
+    // ── Modifiers ─────────────────────────────────────────────────────────────
+
+    &-active {
+        background-color: var(--chip-active-bg);
+    }
+
+    &-dragging {
+        opacity: 0.6;
+        cursor:  grabbing;
+    }
+
+    &-disabled {
+        opacity:        0.5;
+        cursor:         not-allowed;
+        pointer-events: none;
+    }
+
+    &-filtered {
+        outline:        2px solid var(--chip-filtered-outline);
+        outline-offset: -2px;
+    }
+}
+
+// ── Placeholder ───────────────────────────────────────────────────────────────
+// Shown in drag-and-drop zones while a chip is being dragged.
+
+.chip-placeholder {
+    display:        inline-block;
+    width:          var(--chip-placeholder-width);
+    height:         var(--chip-placeholder-height);
+    background:     var(--chip-placeholder-bg);
+    border:         1.5px dashed var(--chip-placeholder-border);
+    border-radius:  var(--chip-border-radius);
+    margin:         0 var(--chip-margin-right) var(--chip-margin-bottom) 0;
+    vertical-align: middle;
+}

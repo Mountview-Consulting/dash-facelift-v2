@@ -1,0 +1,48 @@
+// =============================================================================
+// Utilities
+// -----------------------------------------------------------------------------
+// Bootstrap 5-style helpers that Bootstrap 4 lacks. Gap and position are
+// lifted to src/utilities/. Utilities use !important
+// by design so they always win over component styles.
+// =============================================================================
+
+@use '../abstracts/scales';
+
+// ── Z-index ──────────────────────────────────────────────────────────────────
+
+@each $key, $value in scales.$z-indexes {
+    .z-index-#{$key} { z-index: $value; }
+}
+
+// ── Opacity ──────────────────────────────────────────────────────────────────
+
+@each $key, $value in scales.$opacities {
+    .opacity-#{$key} { opacity: $value; }
+}
+
+// ── Border ───────────────────────────────────────────────────────────────────
+
+.border-style-dashed {
+    border-style: dashed !important;
+}
+
+@each $size, $width in scales.$border-widths {
+    .border-w-#{$size}        { border-width: $width !important; }
+    .border-top-w-#{$size}    { border-top-width: $width !important; }
+    .border-right-w-#{$size}  { border-right-width: $width !important; }
+    .border-bottom-w-#{$size} { border-bottom-width: $width !important; }
+    .border-left-w-#{$size}   { border-left-width: $width !important; }
+}
+
+// ── Typography ───────────────────────────────────────────────────────────────
+
+.display-5 { font-size: 2rem;   font-weight: 300; line-height: 1.2; }
+.display-6 { font-size: 1.5rem; font-weight: 300; line-height: 1.2; }
+.display-7 { font-size: 1.2rem; font-weight: 300; line-height: 1.2; }
+
+.fa-sm   { font-size: 0.7em; }
+.fa-1_5x { font-size: 1.5em; }
+
+.highlight {
+    background-color: rgba(255, 193, 7, 0.4);   // Bootstrap warning @ 40%
+}

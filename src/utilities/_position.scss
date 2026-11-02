@@ -1,0 +1,28 @@
+// =============================================================================
+// Utilities — position
+// -----------------------------------------------------------------------------
+// Bootstrap 4 has no offset utilities. Sizes: spacing scale + 50% / 100%.
+//      .top-0  .left-3  .bottom-50  .right-100
+//      .translate-middle           centre on the offset point
+//      .center-absolute            absolute + centred in the parent
+// =============================================================================
+
+@use '../abstracts/scales';
+
+@each $size, $value in scales.$positions {
+    .top-#{$size}    { top: $value !important; }
+    .bottom-#{$size} { bottom: $value !important; }
+    .left-#{$size}   { left: $value !important; }
+    .right-#{$size}  { right: $value !important; }
+}
+
+.translate-middle   { transform: translate(-50%, -50%) !important; }
+.translate-middle-x { transform: translateX(-50%) !important; }
+.translate-middle-y { transform: translateY(-50%) !important; }
+
+.center-absolute {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}

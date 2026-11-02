@@ -1,0 +1,39 @@
+// =============================================================================
+// Base — element-level defaults
+// =============================================================================
+
+body {
+    color: var(--t-color-base-dark);
+    background-color: var(--t-color-base-light);
+    font-size: 0.95rem;
+    overscroll-behavior: none;
+}
+
+a {
+    color: var(--primary);
+
+    &[disabled] {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}
+
+hr {
+    width: 100%;
+    display: block;
+    border-top-color: rgba(0, 0, 0, .125);
+}
+
+b, strong, .strong {
+    font-weight: bolder;
+}
+
+// WordPress's block-library CSS sets `border-style: solid` on anything whose
+// inline style contains "border-width". Dashboard markup isn't editor blocks,
+// so it only causes stray borders, e.g. AG Grid's wrapper, which has
+// `--ag-internal-row-border-width` inline and gets a 3px black border.
+// Same selector and specificity as WordPress's, so it wins only because this
+// CSS loads later. Any rule that sets a border on purpose still beats it.
+html :where([style*="border-width"]) {
+    border-style: none;
+}

@@ -1,0 +1,39 @@
+$form-control-border-color: #ced4da;
+
+.btn {
+    &-xs {
+        padding: calc(.25rem * 0.75) calc(.5rem * 0.75)!important;
+        font-size: calc(.875rem * 0.85)!important; 
+    }
+
+    &-icon {
+        width: 40px;
+        height: 38px;
+        font-size: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+
+        &.btn-sm {
+            width: 30px;
+            height: 30px;
+            font-size: 75%;
+        }
+
+        &.btn-xs {
+            width: 23px;
+            height: 23px;
+            font-size: 70%;
+        }
+    }
+
+
+    &-outline {
+            &-form {
+            border-color: $form-control-border-color !important;
+            background-color: var(--white) !important;
+        }
+    }
+
+}

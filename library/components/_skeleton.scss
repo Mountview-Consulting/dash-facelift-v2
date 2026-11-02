@@ -1,0 +1,38 @@
+// =============================================================================
+// Skeleton loader
+// =============================================================================
+
+.skeleton {
+    --skeleton-width: 12ch;
+    --skeleton-height: 1em;
+    --skeleton-background-color: #e9ecef;
+
+    display: inline-block;
+    height: var(--skeleton-height);
+    width: var(--skeleton-width);
+    position: relative;
+    overflow: hidden;
+    vertical-align: text-top; 
+
+    &, &-block {
+        height: var(--skeleton-height);
+        width: var(--skeleton-width);
+        background-color: var(--skeleton-background-color);
+        animation: skeleton-loading 0.8s linear infinite alternate;
+    }
+
+    &-block {
+        --skeleton-height: auto;
+        --skeleton-width: 100%;
+        display: block;
+    }
+}
+
+@keyframes skeleton-loading {
+    0% {
+        opacity: 1;
+    } 
+    100% {
+        opacity: 0.3;
+    }
+}

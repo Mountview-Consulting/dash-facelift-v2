@@ -1,0 +1,44 @@
+// =============================================================================
+// Brand template — copy to brands/<brand-name>.scss
+// -----------------------------------------------------------------------------
+// Brand tokens only. Anything not set here falls back to src/tokens/_defaults.
+// Uncomment only what differs from the defaults.
+// =============================================================================
+
+@use '../src/abstracts/breakpoints' as bp;
+@use '../src/facelift';
+
+:root {
+    // Brand palette — raw colours, referenced by the tokens below
+    // --brand-primary: #000;
+
+    // Colour
+    // --t-color-base-dark:  #212529;
+    // --t-color-base-light: #fff;
+
+    // Header
+    // --t-header-bg-color:     var(--dark);
+    // --t-header-border-color: transparent;
+    // --t-header-border-width: 0px;
+    // --t-header-text-color:   var(--light);
+    // --t-header-height:       3rem;
+
+    // Sidebar
+    // --t-sidebar-bg-color:            rgba(0, 0, 0, .03);
+    // --t-sidebar-text-color:          var(--t-color-base-dark);
+    // --t-sidebar-width:               13rem;
+    // --t-sidebar-font-size:           85%;
+    // --t-sidebar-hover-bg-color:      rgba(0, 0, 0, .04);
+    // --t-sidebar-active-bg-color:     rgba(0, 0, 0, .08);
+    // --t-sidebar-active-border-color: transparent;
+    // --t-sidebar-active-border-width: 0px;
+
+    // Main
+    // --t-main-bg-color: var(--t-color-base-light);
+}
+
+// @include bp.down(md) {
+//     :root {
+//         --t-header-height: 3rem;
+//     }
+// }

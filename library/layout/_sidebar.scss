@@ -1,0 +1,103 @@
+// =============================================================================
+// Sidebar menu
+// =============================================================================
+
+@use '../abstracts/breakpoints' as bp;
+
+.sidebar#sidebar-menu {
+    padding-top: 0 !important;
+    border-right-color: var(--t-sidebar-border-color);
+    background-color: var(--t-sidebar-bg-color);
+
+    .menu-sidebar-menu-container {
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    #menu-sidebar-menu {
+        min-height: 100%;
+    }
+
+    .nav-item {
+        &.active {
+            background-color: var(--t-menu-active-bg-color);
+
+            .nav-link {
+                color: var(--t-menu-active-color);
+                border-left: var(--t-menu-active-border, unset);
+            }
+        }
+
+        &:not(.active) .nav-link {
+            &:not(:hover) {
+                color: var(--t-sidebar-color);
+            }
+
+            &:hover {
+                color: var(--t-menu-hover-color);
+                background-color: var(--t-menu-hover-bg-color);
+            }
+        }
+
+        .nav-link {
+            color: var(--t-menu-active-color);
+            font-size: var(--t-sidebar-font-size) !important;
+            font-weight: var(--t-sidebar-font-weight) !important;
+            padding: .5rem 1rem;
+            display: flex;
+            align-items: flex-start;
+
+            > i.fa {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                height: 1.5em;
+                width: 1em;
+            }
+
+            > span {
+                flex-grow: 1;
+            }
+        }
+
+        .sub-menu {
+            background-color: var(--t-menu-sub-bg-color);
+            list-style: none;
+            padding: 0;
+
+            .nav-link {
+                font-size: calc(var(--t-sidebar-font-size) * 0.9) !important;
+                font-weight: calc(var(--t-sidebar-font-weight) - 100) !important;
+                margin-left: 1.25rem;
+
+                > i.fa {
+                    display: none;
+                }
+            }
+        }
+
+        // Items after the split are pushed to the bottom of the sidebar
+        &.menu-item-is-split {
+            margin-top: 1rem;
+
+            @include bp.up(sm) {
+                margin-top: auto;
+            }
+
+            .nav-link,
+            ~ .nav-item .nav-link {
+                font-weight: bold !important;
+                font-size: calc(var(--t-sidebar-font-size) * 0.9) !important;
+            }
+        }
+    }
+
+    &.sidebar-showing {
+        width: 100% !important;
+        z-index: 99;
+
+        @include bp.up(sm) {
+            width: var(--t-sidebar-width) !important;
+        }
+    }
+}

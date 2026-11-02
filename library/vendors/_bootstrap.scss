@@ -1,0 +1,126 @@
+// =============================================================================
+// Bootstrap 4 — overrides and extensions
+// =============================================================================
+
+// ── Forms ────────────────────────────────────────────────────────────────────
+
+$icon-chevron: "data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%2369717f' d='M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z'/%3E%3C/svg%3E";
+$icon-search: "data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%2369717f' d='M416 208c0 45.9-14.9 88.3-40 122.7l126.6 126.7c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z'/%3E%3C/svg%3E";
+
+select.form-control,
+input[type=search].form-control {
+    appearance: none;
+    background-repeat: no-repeat;
+    background-size: 0.8rem;
+    background-position: center right 0.6rem;
+}
+
+select.form-control:not([multiple]):not([size]) {
+    padding-right: 2rem;
+    background-image: url($icon-chevron);
+}
+
+input[type=search].form-control {
+    padding-right: 2rem;
+    background-image: url($icon-search);
+}
+
+.form-control::placeholder {
+    color: var(--t-color-gray-300);
+}
+
+.form-check .form-check-label {
+    cursor: pointer;
+}
+
+// ── Buttons ──────────────────────────────────────────────────────────────────
+
+.btn-secondary {
+    color: var(--t-color-base-dark);
+    background-color: var(--t-color-gray-100);
+}
+
+.btn {
+    &.btn-outline-form {
+        border-color: #ced4da !important;
+        background-color: var(--white) !important;
+
+        &:not(:disabled):not(.disabled):hover {
+            background-color: #e9ecef !important;
+            color: inherit !important;
+        }
+    }
+
+    &-xs {
+        padding: calc(.25rem * 0.75) calc(.5rem * 0.75) !important;
+        font-size: calc(.875rem * 0.85) !important;
+    }
+
+    &-icon {
+        width: 40px;
+        height: 38px;
+        font-size: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+
+        &.btn-sm { width: 30px; height: 30px; font-size: 75%; }
+        &.btn-xs { width: 23px; height: 23px; font-size: 70%; }
+    }
+}
+
+.btn-group-xs .btn {
+    height: 24px;
+
+    &.btn-icon {
+        width: 24px;
+        font-size: 85%;
+    }
+}
+
+// ── Navs ─────────────────────────────────────────────────────────────────────
+
+a.nav-link {
+    text-decoration: none;
+}
+
+.nav-pills .nav-item {
+    button {
+        border: 1px solid rgba(0, 0, 0, .125);
+        border-radius: 0;
+        border-left-width: 0;
+        background-color: var(--white);
+
+        &.active {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        &:not(.active):hover {
+            background-color: rgba(0, 0, 0, .125);
+        }
+    }
+
+    &:first-child button {
+        border-top-left-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+        border-left-width: 1px;
+    }
+
+    &:last-child button {
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+    }
+}
+
+.nav {
+    &-sm .nav-link {
+        padding: .25rem .5rem;
+        font-size: .85rem;
+    }
+
+    .nav-link.form-control {
+        padding: .25rem .75rem;
+    }
+}

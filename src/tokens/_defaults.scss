@@ -1,0 +1,36 @@
+// =============================================================================
+// Theme tokens — defaults
+// -----------------------------------------------------------------------------
+// Every --t-* custom property the facelift reads, with its default value.
+// Brand files override any of these on :root.
+//
+// Wrapped in :where() so these have zero specificity: a brand's :root always
+// wins, regardless of source order. Add a token here whenever src/ starts
+// reading a new one.
+// =============================================================================
+
+:where(:root) {
+    // ── Colour ──────────────────────────────────────────────────────────────
+    --t-color-base-dark:  #212529;
+    --t-color-base-light: #fff;
+
+    // ── Header ──────────────────────────────────────────────────────────────
+    --t-header-bg-color:        var(--dark);
+    --t-header-border-color:    transparent;
+    --t-header-border-width:    0px;   // keep the unit: used in calc()
+    --t-header-text-color:      var(--light);
+    --t-header-height:          3rem;
+
+    // ── Sidebar ─────────────────────────────────────────────────────────────
+    --t-sidebar-bg-color:               rgba(0, 0, 0, .03);
+    --t-sidebar-text-color:             var(--t-color-base-dark);
+    --t-sidebar-width:                  13rem;
+    --t-sidebar-font-size:              0.82rem;
+    --t-sidebar-hover-bg-color:         rgba(0, 0, 0, .04);
+    --t-sidebar-active-bg-color:        rgba(0, 0, 0, .08);
+    --t-sidebar-active-border-color:    transparent;
+    --t-sidebar-active-border-width:    0px;   // keep the unit: used in calc()
+
+    // ── Main ────────────────────────────────────────────────────────────────
+    --t-main-bg-color: var(--t-color-base-light);
+}

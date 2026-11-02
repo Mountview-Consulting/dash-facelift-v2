@@ -1,0 +1,115 @@
+// =============================================================================
+// Header / top navbar
+// -----------------------------------------------------------------------------
+// Fresh start. The v1 port is in library/layout/_header.scss to lift from.
+// =============================================================================
+
+@use '../abstracts/breakpoints' as bp;
+
+header > .navbar {
+    background-color: var(--t-header-bg-color) !important;
+    min-height: var(--t-header-height) !important;
+    border-bottom: var(--t-header-border-width) solid var(--t-header-border-color) !important;
+    color: var(--t-header-text-color);
+    padding: 0.5rem 0.75rem;
+    // align-items: center;
+
+    // background-color: var(--t-header-bg-color) !important;
+    // min-height: var(--t-navbar-height);
+
+    #sidebar-toggler, .navbar-text, #user-dropdown, [data-target="#header-menu"] {
+        color: currentColor;
+    }
+
+    #sidebar-toggler, [data-target="#header-menu"] {
+        border: 0;
+    }
+
+    .navbar-brand {
+        display: none !important;
+    }
+
+    #user-dropdown {
+        &[aria-expanded="true"], &:hover {
+            opacity: 0.75;
+        }
+
+        + .dropdown-menu {
+            .dropdown-item:first-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+    }
+
+    #user-dropdown, .navbar-text {
+        font-size: 0.9rem;
+    }
+
+    .navbar-text {
+        opacity: 0.8;
+    }
+
+    .brand-title, .brand-logo {
+        top: 0.5rem;
+        transform: translate(-50%, 0%);
+    }
+
+    .brand-title {
+        font-size: 1.5rem;
+        line-height: 1.3;
+        margin: 0 !important;
+        // dash theme sets text-overflow: ellipsis, but it only works on a
+        // single line that's clipped — so stop wrapping and hide the overflow
+        white-space: nowrap;
+        overflow: hidden !important;
+    }
+
+    .brand-logo {
+        height: calc(var(--t-header-height) - var(--t-header-border-width) - 1rem);
+    }
+
+    > *:not(.navbar-collapse) {
+        height: calc(var(--t-header-height) - var(--t-header-border-width)) !important;
+    }
+
+    // target brand title and logo
+    > .flex-grow-1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a {
+            display: block;
+            width: auto;
+        }
+    }
+
+    @include bp.up(md) {
+        .navbar-text {
+            display: flex !important;
+            align-items: center;
+        }
+    }
+
+    @include bp.down(md) {
+        .brand-title {
+            font-size: 1.3rem;
+            width: calc(100% - 7rem);
+            line-height: 1.6;
+            height: calc(var(--t-header-height) - var(--t-header-border-width));
+        }
+
+        #user-dropdown {
+            display: none;
+        }
+
+        .navbar-nav {
+            padding-bottom: 0.5rem;
+
+            .dropdown-menu {
+                display: block !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+// =============================================================================
+// Scroll shadows
+// =============================================================================
+
+.scroll-shadows {
+    &-x {
+        background:
+            linear-gradient(to right, #fff 20%, transparent) left   / 40px 100%,
+            linear-gradient(to left,  #fff 20%, transparent) right  / 40px 100%,
+            radial-gradient(farthest-side at 0    50%, rgba(0,0,0,.12), transparent) left   / 12px 100%,
+            radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.12), transparent) right  / 12px 100%;
+        background-repeat: no-repeat;
+        background-attachment: local, local, scroll, scroll;
+    }
+
+    &-y {
+        background:
+            linear-gradient(to bottom, #fff 20%, transparent) top    / 100% 40px,
+            linear-gradient(to top,    #fff 20%, transparent) bottom / 100% 40px,
+            radial-gradient(farthest-side at 50% 0,    rgba(0,0,0,.12), transparent) top    / 100% 12px,
+            radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,.12), transparent) bottom / 100% 12px;
+        background-repeat: no-repeat;
+        background-attachment: local, local, scroll, scroll;
+    }
+}

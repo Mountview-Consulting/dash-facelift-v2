@@ -1,0 +1,28 @@
+// =============================================================================
+// Utilities — gap
+// -----------------------------------------------------------------------------
+// Bootstrap 4 has no gap utilities.
+//      .gap-3      gap: 1rem
+//      .gap-3-x    column-gap: 1rem
+//      .gap-3-y    row-gap: 1rem
+//      .gap-md-3   responsive: from md up
+// =============================================================================
+
+@use '../abstracts/breakpoints' as bp;
+@use '../abstracts/scales';
+
+@mixin gap-classes($infix: '') {
+    @each $size, $value in scales.$spacers {
+        .gap#{$infix}-#{$size}   { gap: $value !important; }
+        .gap#{$infix}-#{$size}-x { column-gap: $value !important; }
+        .gap#{$infix}-#{$size}-y { row-gap: $value !important; }
+    }
+}
+
+@include gap-classes;
+
+@each $name in (sm, md, lg, xl) {
+    @include bp.up($name) {
+        @include gap-classes('-#{$name}');
+    }
+}
