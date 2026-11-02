@@ -1,0 +1,28 @@
+@use '../src/abstracts/breakpoints' as bp;
+@use '../src/facelift';
+
+:root {
+    // Brand palette
+    --brand-black: #0D0D0D;
+    --brand-white: #FFF;
+    --brand-red: #bc0900;
+    --brand-dark-red: #6f0600;
+    --brand-green: #307006;
+    --brand-yellow: #E9C33C;
+    --brand-grey: #5A5C5F;
+    --brand-dark-grey: #282828;
+    --brand-purple: #806CAE;
+    --brand-blue: #61C5D5;
+
+    // Header
+    --t-header-bg-color:            var(--brand-black);
+    --t-header-text-color:          var(--brand-white);
+
+    // Sidebar
+    --t-sidebar-bg-color:           var(--brand-dark-grey);
+    --t-sidebar-text-color:         var(--brand-white);
+    --t-sidebar-hover-bg-color:     var(--brand-dark-red);
+    --t-sidebar-hover-text-color:   var(--brand-white);
+    --t-sidebar-active-bg-color:    var(--brand-red);
+    --t-sidebar-active-text-color:  var(--brand-white);
+}

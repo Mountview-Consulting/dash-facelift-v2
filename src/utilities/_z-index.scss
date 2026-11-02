@@ -1,0 +1,12 @@
+// =============================================================================
+// Utilities — z-index
+// -----------------------------------------------------------------------------
+// Bootstrap 4 has no z-index utilities. Steps 0–6 from the z-index scale.
+//      .z-index-0  .z-index-3  .z-index-6
+// =============================================================================
+
+@use '../abstracts/scales';
+
+@each $key, $value in scales.$z-indexes {
+    .z-index-#{$key} { z-index: $value; }
+}

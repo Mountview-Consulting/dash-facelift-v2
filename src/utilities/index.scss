@@ -1,4 +1,8 @@
 // Utility classes — single-purpose helpers. Loaded last so they win over
 // component styles. One file per group; lift the rest from library/utilities.
+@forward 'border';
 @forward 'gap';
+@forward 'opacity';
 @forward 'position';
+@forward 'text';
+@forward 'z-index';

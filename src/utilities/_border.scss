@@ -1,0 +1,13 @@
+@use '../abstracts/scales';
+
+.border-style-dashed {
+    border-style: dashed !important;
+}
+
+@each $size, $width in scales.$border-widths {
+    .border-w-#{$size}        { border-width: $width !important; }
+    .border-top-w-#{$size}    { border-top-width: $width !important; }
+    .border-right-w-#{$size}  { border-right-width: $width !important; }
+    .border-bottom-w-#{$size} { border-bottom-width: $width !important; }
+    .border-left-w-#{$size}   { border-left-width: $width !important; }
+}

@@ -1,0 +1,5 @@
+@use '../abstracts/scales';
+
+@each $key, $value in scales.$opacities {
+    .opacity-#{$key} { opacity: $value; }
+}
