@@ -62,7 +62,7 @@
 
             > .nav-link {
                 background-color: var(--t-sidebar-active-bg-color);
-                color: var(--t-sidebar-hover-text-color);
+                color: var(--t-sidebar-active-text-color);
                 border-left: var(--t-sidebar-active-border-color) solid var(--t-sidebar-active-border-width);
                 padding-left: calc(1rem - var(--t-sidebar-active-border-width));
             }

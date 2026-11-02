@@ -9,7 +9,7 @@
   --t-header-border-color: transparent;
   --t-header-border-width: 0px;
   --t-header-text-color: var(--light);
-  --t-header-height: 3rem;
+  --t-header-height: 3.5rem;
   --t-sidebar-bg-color: rgba(0, 0, 0, .03);
   --t-sidebar-text-color: var(--t-color-base-dark);
   --t-sidebar-width: 14rem;
@@ -175,7 +175,7 @@ header > .navbar > .flex-grow-1 a {
 }
 .sidebar#sidebar-menu .nav-item.active > .nav-link {
   background-color: var(--t-sidebar-active-bg-color);
-  color: var(--t-sidebar-hover-text-color);
+  color: var(--t-sidebar-active-text-color);
   border-left: var(--t-sidebar-active-border-color) solid var(--t-sidebar-active-border-width);
   padding-left: calc(1rem - var(--t-sidebar-active-border-width));
 }
@@ -1461,4 +1461,18 @@ header > .navbar > .flex-grow-1 a {
 
 .z-index-6 {
   z-index: 6;
+}
+
+:root {
+  --brand-blue: #2a329a;
+  --brand-pale-blue: #8691BE;
+  --brand-grey-blue: #425398;
+  --brand-dark-blue: #1e2749;
+  --brand-orange: #fbaf63;
+  --brand-yellow: #FFEB79;
+  --brand-white: #fff;
+  --t-header-bg-color: var(--brand-grey-blue);
+  --t-header-text-color: var(--brand-white);
+  --t-sidebar-active-bg-color: var(--brand-pale-blue);
+  --t-sidebar-active-text-color: var(--brand-white);
 }

@@ -1,4 +1,21 @@
 @use '../src/abstracts/breakpoints' as bp;
 @use '../src/facelift';
 
-:root {}
+:root {
+    // Brand palette
+    --brand-blue: #2a329a;
+    --brand-pale-blue: #8691BE;
+    --brand-grey-blue: #425398;
+    --brand-dark-blue: #1e2749;
+    --brand-orange: #fbaf63;
+    --brand-yellow: #FFEB79;
+    --brand-white: #fff;
+
+    // Header
+    --t-header-bg-color:            var(--brand-grey-blue);
+    --t-header-text-color:          var(--brand-white);
+
+    // Sidebar
+    --t-sidebar-active-bg-color:    var(--brand-pale-blue);
+    --t-sidebar-active-text-color:  var(--brand-white);
+}
