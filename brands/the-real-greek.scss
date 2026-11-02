@@ -14,8 +14,15 @@
     // Header
     --t-header-bg-color:            var(--brand-grey-blue);
     --t-header-text-color:          var(--brand-white);
+    --t-header-height:              4rem;
+    --t-header-logo-gap:            1.5rem;
 
     // Sidebar
     --t-sidebar-active-bg-color:    var(--brand-pale-blue);
     --t-sidebar-active-text-color:  var(--brand-white);
+
+    @include bp.down(lg)   {
+        --t-header-height:              3rem;
+        --t-header-logo-gap:            0.8rem;
+    }
 }

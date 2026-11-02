@@ -10,6 +10,7 @@
   --t-header-border-width: 0px;
   --t-header-text-color: var(--light);
   --t-header-height: 3.5rem;
+  --t-header-logo-gap: 1rem;
   --t-sidebar-bg-color: rgba(0, 0, 0, .03);
   --t-sidebar-text-color: var(--t-color-base-dark);
   --t-sidebar-width: 14rem;
@@ -81,7 +82,7 @@ header > .navbar .navbar-text {
   opacity: 0.8;
 }
 header > .navbar .brand-title, header > .navbar .brand-logo {
-  top: 0.5rem;
+  top: calc(var(--t-header-logo-gap) / 2);
   transform: translate(-50%, 0%);
 }
 header > .navbar .brand-title {
@@ -92,7 +93,7 @@ header > .navbar .brand-title {
   overflow: hidden !important;
 }
 header > .navbar .brand-logo {
-  height: calc(var(--t-header-height) - var(--t-header-border-width) - 1rem);
+  height: calc(var(--t-header-height) - var(--t-header-border-width) - var(--t-header-logo-gap));
 }
 header > .navbar > *:not(.navbar-collapse) {
   height: calc(var(--t-header-height) - var(--t-header-border-width)) !important;
@@ -218,6 +219,15 @@ header > .navbar > .flex-grow-1 a {
 .ag-theme-dash {
   --ag-font-size: 0.9rem;
   --ag-font-family: var(--font-family-sans-serif);
+  --ag-header-font-weight: 700;
+  --ag-header-background-color: var(--light);
+  --ag-header-text-color: var(--dark);
+  --ag-wrapper-border: 1px solid #dee2e6;
+  --ag-wrapper-border-radius: .25rem;
+  --ag-cell-text-color: var(--dark);
+}
+.ag-theme-dash .ag-floating-bottom {
+  --ag-data-background-color: var(--light);
 }
 
 .c3-axis.c3-axis-x line, .c3-axis.c3-axis-x path, .c3-axis.c3-axis-y line, .c3-axis.c3-axis-y path, .c3-axis.c3-axis-y2 line, .c3-axis.c3-axis-y2 path {
@@ -1473,6 +1483,14 @@ header > .navbar > .flex-grow-1 a {
   --brand-white: #fff;
   --t-header-bg-color: var(--brand-grey-blue);
   --t-header-text-color: var(--brand-white);
+  --t-header-height: 4rem;
+  --t-header-logo-gap: 1.5rem;
   --t-sidebar-active-bg-color: var(--brand-pale-blue);
   --t-sidebar-active-text-color: var(--brand-white);
+}
+@media (max-width: 991.98px) {
+  :root {
+    --t-header-height: 3rem;
+    --t-header-logo-gap: 0.8rem;
+  }
 }
