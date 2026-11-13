@@ -7,7 +7,7 @@
       "uuidString" : "29D1043D-8A78-468D-A6A6-916DEB8075B8"
     }
   ],
-  "creatorBuild" : "34921",
+  "creatorBuild" : "36870",
   "files" : {
     "\/.gitignore" : {
       "cB" : 0,
@@ -19,7 +19,6 @@
     },
     "\/brands\/_template.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -32,7 +31,6 @@
     },
     "\/brands\/bow-street.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -45,7 +43,6 @@
     },
     "\/brands\/burger-co.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -58,7 +55,6 @@
     },
     "\/brands\/creams-corp.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -71,7 +67,6 @@
     },
     "\/brands\/franco-manca.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -84,7 +79,6 @@
     },
     "\/brands\/lemon-pepper-holdings.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -97,7 +91,6 @@
     },
     "\/brands\/marugame.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -110,7 +103,6 @@
     },
     "\/brands\/the-beefy-boys.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -123,7 +115,6 @@
     },
     "\/brands\/the-real-greek.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -136,7 +127,6 @@
     },
     "\/dist\/bow-street.css" : {
       "aP" : 1,
-      "bl" : 0,
       "ci" : 0,
       "co" : 0,
       "ft" : 16,
@@ -148,7 +138,6 @@
     },
     "\/dist\/burger-co.css" : {
       "aP" : 1,
-      "bl" : 0,
       "ci" : 0,
       "co" : 0,
       "ft" : 16,
@@ -160,7 +149,6 @@
     },
     "\/dist\/creams-corp.css" : {
       "aP" : 1,
-      "bl" : 0,
       "ci" : 0,
       "co" : 0,
       "ft" : 16,
@@ -172,7 +160,6 @@
     },
     "\/dist\/franco-manca.css" : {
       "aP" : 1,
-      "bl" : 0,
       "ci" : 0,
       "co" : 0,
       "ft" : 16,
@@ -184,7 +171,6 @@
     },
     "\/dist\/lemon-pepper-holdings.css" : {
       "aP" : 1,
-      "bl" : 0,
       "ci" : 0,
       "co" : 0,
       "ft" : 16,
@@ -196,7 +182,6 @@
     },
     "\/dist\/marugame.css" : {
       "aP" : 1,
-      "bl" : 0,
       "ci" : 0,
       "co" : 0,
       "ft" : 16,
@@ -208,7 +193,6 @@
     },
     "\/dist\/the-beefy-boys.css" : {
       "aP" : 1,
-      "bl" : 0,
       "ci" : 0,
       "co" : 0,
       "ft" : 16,
@@ -220,7 +204,6 @@
     },
     "\/dist\/the-real-greek.css" : {
       "aP" : 1,
-      "bl" : 0,
       "ci" : 0,
       "co" : 0,
       "ft" : 16,
@@ -243,7 +226,6 @@
     },
     "\/library\/layout\/_header.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -256,7 +238,6 @@
     },
     "\/library\/layout\/_sidebar.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -269,7 +250,6 @@
     },
     "\/library\/layout\/_templates.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -282,7 +262,6 @@
     },
     "\/library\/legacy\/_map.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -314,7 +293,6 @@
     },
     "\/library\/vendors\/_bootstrap.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -362,7 +340,6 @@
     },
     "\/src\/_facelift.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -375,7 +352,6 @@
     },
     "\/src\/abstracts\/_breakpoints.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -388,7 +364,6 @@
     },
     "\/src\/abstracts\/_scales.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -401,7 +376,6 @@
     },
     "\/src\/abstracts\/index.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -414,7 +388,6 @@
     },
     "\/src\/base\/index.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -427,7 +400,6 @@
     },
     "\/src\/components\/_chip.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -440,7 +412,6 @@
     },
     "\/src\/components\/_draggable.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -453,7 +424,6 @@
     },
     "\/src\/components\/_list.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -466,7 +436,6 @@
     },
     "\/src\/components\/_placeholder.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -479,7 +448,6 @@
     },
     "\/src\/components\/_scroll-shadows.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -492,7 +460,6 @@
     },
     "\/src\/components\/_skeleton.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -505,7 +472,6 @@
     },
     "\/src\/components\/index.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -518,7 +484,6 @@
     },
     "\/src\/layout\/_footer.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -531,7 +496,6 @@
     },
     "\/src\/layout\/_header.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -544,7 +508,6 @@
     },
     "\/src\/layout\/_main.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -557,7 +520,6 @@
     },
     "\/src\/layout\/_sidebar.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -570,7 +532,6 @@
     },
     "\/src\/layout\/_template.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -583,7 +544,6 @@
     },
     "\/src\/layout\/index.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -596,7 +556,6 @@
     },
     "\/src\/tokens\/_defaults.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -609,7 +568,6 @@
     },
     "\/src\/tokens\/index.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -622,7 +580,6 @@
     },
     "\/src\/utilities\/_border.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -635,7 +592,6 @@
     },
     "\/src\/utilities\/_gap.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -648,7 +604,6 @@
     },
     "\/src\/utilities\/_opacity.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -661,7 +616,6 @@
     },
     "\/src\/utilities\/_position.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -674,7 +628,6 @@
     },
     "\/src\/utilities\/_text.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -687,7 +640,6 @@
     },
     "\/src\/utilities\/_z-index.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -700,7 +652,6 @@
     },
     "\/src\/utilities\/index.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -713,7 +664,6 @@
     },
     "\/src\/vendors\/_ag-grid.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -726,7 +676,6 @@
     },
     "\/src\/vendors\/_c3.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -739,7 +688,6 @@
     },
     "\/src\/vendors\/_daterangepicker.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -752,7 +700,6 @@
     },
     "\/src\/vendors\/_font-awesome.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -765,7 +712,6 @@
     },
     "\/src\/vendors\/_selectize.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -778,7 +724,6 @@
     },
     "\/src\/vendors\/_swiper.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -791,7 +736,6 @@
     },
     "\/src\/vendors\/_wpdatatables.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -804,7 +748,6 @@
     },
     "\/src\/vendors\/bootstrap\/_buttons.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -815,9 +758,32 @@
       "oS" : 0,
       "pg" : 0
     },
+    "\/src\/vendors\/bootstrap\/_card.scss" : {
+      "aP" : 0,
+      "co" : 0,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/src\/vendors\/bootstrap\/_card.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0
+    },
+    "\/src\/vendors\/bootstrap\/_form-control.scss" : {
+      "aP" : 0,
+      "co" : 0,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/src\/vendors\/bootstrap\/_form-control.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0
+    },
     "\/src\/vendors\/bootstrap\/_nav.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -830,7 +796,6 @@
     },
     "\/src\/vendors\/bootstrap\/_type.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -843,7 +808,6 @@
     },
     "\/src\/vendors\/bootstrap\/index.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -856,7 +820,6 @@
     },
     "\/src\/vendors\/index.scss" : {
       "aP" : 0,
-      "bl" : 0,
       "co" : 0,
       "ec" : 1,
       "ft" : 4,
@@ -1167,10 +1130,6 @@
     },
     "babelRetainLines" : 0,
     "babelUseBuiltInsType" : 0,
-    "bowerAbbreviatedPath" : "bower_components",
-    "bowerForceLatestOnConflict" : 1,
-    "bowerTargetDependencyListType" : 1,
-    "bowerUseExactVersion" : 0,
     "browserRefreshDelay" : 0,
     "browserslistString" : ">0.2%, last 2 versions, Firefox ESR, not dead",
     "buildEnvironment" : 0,
@@ -1904,7 +1863,6 @@
       "cssoStyle" : 0,
       "purgeCSSStyle" : 0,
       "shouldRunAutoprefixer" : 1,
-      "shouldRunBless" : 0,
       "sourceMapStyle" : 0
     },
     "languageDefaultsGIF" : {
@@ -1993,7 +1951,6 @@
       "purgeCSSStyle" : 0,
       "rewriteURLStyle" : 0,
       "shouldRunAutoprefixer" : 0,
-      "shouldRunBless" : 0,
       "sourceMapStyle" : 0,
       "strictImports" : 0,
       "strictUnits" : 0
@@ -2065,7 +2022,6 @@
       "outputStyle" : 0,
       "purgeCSSStyle" : 0,
       "shouldRunAutoprefixer" : 0,
-      "shouldRunBless" : 0,
       "sourceMapStyle" : 0
     },
     "languageDefaultsSLIM" : {
@@ -2097,7 +2053,6 @@
       "purgeCSSStyle" : 0,
       "resolveRelativeURLS" : 0,
       "shouldRunAutoprefixer" : 0,
-      "shouldRunBless" : 0,
       "sourceMapStyle" : 0
     },
     "languageDefaultsSVG" : {
@@ -2107,7 +2062,9 @@
       "autoOutputPathReplace1" : "",
       "autoOutputPathReplace2" : "",
       "autoOutputPathStyle" : 0,
-      "pluginMask" : 52780316221407
+      "pluginMask" : 52780316221407,
+      "prettyPrinted" : 0,
+      "useMultipass" : 0
     },
     "languageDefaultsTS" : {
       "autoOutputAction" : 0,
@@ -2116,12 +2073,13 @@
       "autoOutputPathReplace1" : "",
       "autoOutputPathReplace2" : "",
       "autoOutputPathStyle" : 0,
+      "bundleFormat" : 4,
       "createDeclarationFile" : 0,
       "jsxMode" : 0,
       "minifierStyle" : 0,
       "moduleDetectionType" : 0,
-      "moduleResolutionType" : 0,
-      "moduleType" : 2,
+      "moduleResolutionType" : 5,
+      "moduleType" : 5,
       "removeComments" : 0,
       "sourceMapStyle" : 0,
       "targetECMAVersion" : 2018
@@ -2129,6 +2087,16 @@
     "languageDefaultsUserDefined" : [
 
     ],
+    "languageDefaultsWEBP" : {
+      "autoOutputAction" : 0,
+      "autoOutputPathFilenamePattern" : "*.webp",
+      "autoOutputPathRelativePath" : "",
+      "autoOutputPathReplace1" : "",
+      "autoOutputPathReplace2" : "",
+      "autoOutputPathStyle" : 0,
+      "optimizationPresetUUID" : "lpckwebp-default",
+      "rgbQuality" : 75
+    },
     "npmAbbreviatedPath" : "",
     "npmCreatePackageLock" : 1,
     "npmInstallOptionalDependencies" : 0,
@@ -2183,15 +2151,12 @@
     "susyVersion" : 3,
     "tsAllowArbitraryExtensions" : 0,
     "tsAllowImportingTSExtensions" : 0,
-    "tsAllowSyntheticDefaultImports" : 0,
     "tsAllowUMDGlobalAccess" : 0,
     "tsAllowUnreachableCode" : 0,
     "tsAllowUnusedLabels" : 0,
-    "tsAlwaysStrict" : 0,
-    "tsDownlevelIteration" : 0,
+    "tsConfigFileHandlingType" : 0,
     "tsEmitBOM" : 0,
     "tsEmitDecoratorMetadata" : 0,
-    "tsESModuleInterop" : 0,
     "tsExactOptionalPropertyTypes" : 0,
     "tsExperimentalDecorators" : 0,
     "tsForceConsistentCasingInFileNames" : 1,
@@ -2199,6 +2164,7 @@
     "tsIsolatedModules" : 0,
     "tsJSXFactory" : "React.createElement",
     "tsJSXFragmentFactory" : "Fragment",
+    "tsLibString" : "",
     "tsNoEmitHelpers" : 0,
     "tsNoFallthroughCasesInSwitch" : 0,
     "tsNoImplicitAny" : 0,
@@ -2209,6 +2175,7 @@
     "tsNoPropertyAccessFromIndexSignature" : 0,
     "tsNoResolve" : 0,
     "tsNoUncheckedIndexAccess" : 0,
+    "tsNoUncheckedSideEffectImports" : 0,
     "tsNoUnusedLocals" : 0,
     "tsNoUnusedParameters" : 0,
     "tsPreserveConstEnums" : 0,
@@ -2221,6 +2188,7 @@
     "tsStrictNullChecks" : 0,
     "tsStrictPropertyInitialization" : 0,
     "tsStripInternal" : 0,
+    "tsTypesString" : "*",
     "tsUseDefineForClassFields" : 0,
     "tsUseUnknownInCatchVariables" : 0,
     "tsVerbatimModuleSyntax" : 0,

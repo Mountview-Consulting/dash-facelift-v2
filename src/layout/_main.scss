@@ -24,7 +24,11 @@
 }
 
 #mv-dash-content {
-    .row > h2 {
+    > .row > h2 {
+        margin-bottom: 0;
+    }
+
+    > hr {
         margin-bottom: 0;
     }
 }

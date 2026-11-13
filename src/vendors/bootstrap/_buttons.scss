@@ -30,9 +30,15 @@ $form-control-border-color: #ced4da;
 
 
     &-outline {
-            &-form {
+        &-form {
             border-color: $form-control-border-color !important;
             background-color: var(--white) !important;
+
+            &.active {
+                background-color: var(--primary) !important;
+                color: var(--white)!important;
+                border-color: var(--primary) !important;
+            }
         }
     }
 
