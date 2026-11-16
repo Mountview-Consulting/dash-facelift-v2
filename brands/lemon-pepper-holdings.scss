@@ -15,6 +15,16 @@
     --brand-opal-uk: #00a78a;
     --brand-opal-us: #006938;
 
+    --brand-gray-100: #f8f9fa;
+    --brand-gray-200: #e9ecef;
+    --brand-gray-300: #dee2e6;
+    --brand-gray-400: #ced4da;
+    --brand-gray-500: #adb5bd;
+    --brand-gray-600: #6c757d;
+    --brand-gray-700: #495057;
+    --brand-gray-800: #343a40;
+    --brand-gray-900: #212529;
+
     // Header
     --t-header-bg-color:     var(--brand-black);
     --t-header-text-color:   var(--brand-white);
@@ -23,6 +33,13 @@
     --t-header-height:       3.5rem;
     
     // Sidebar
-    --t-sidebar-active-border-color:    var(--brand-opal-uk);
-    --t-sidebar-active-border-width:    6px;
+    --t-sidebar-bg-color:               var(--brand-gray-900);
+    --t-sidebar-text-color:             var(--brand-white);
+    --t-sidebar-active-bg-color:        var(--brand-opal-uk);
+    --t-sidebar-active-text-color:      var(--brand-white);
+    --t-sidebar-hover-bg-color:         var(--brand-opal);
+    --t-sidebar-hover-text-color:       var(--brand-white);
+
+    // Main
+    // --t-main-bg-color:      var(--brand-gray-300);
 }

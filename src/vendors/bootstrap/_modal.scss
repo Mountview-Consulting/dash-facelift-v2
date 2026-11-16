@@ -1,0 +1,44 @@
+@use '../../abstracts/breakpoints' as bp;
+
+.modal {
+    $root: &;
+
+    @include bp.up(md) {
+        &.modal-right {
+            .modal-dialog {
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 420px;
+                max-width: 100%;
+                height: 100%;
+                margin: 0;
+            }
+
+            &.fade .modal-dialog {
+                transform: translateX(100%);
+                transition: transform .3s ease-out;
+
+                @media (prefers-reduced-motion: reduce) {
+                    transition: none;
+                }
+            }
+
+            &.show .modal-dialog {
+                transform: none;
+            }
+
+            .modal-content {
+                height: 100%;
+                border: 0;
+                border-left: 1px solid rgba(0, 0, 0, .2);
+                border-radius: 0;
+            }
+
+            .modal-body {
+                overflow-y: auto;
+            }
+        }
+     }
+}

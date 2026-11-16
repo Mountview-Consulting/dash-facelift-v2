@@ -770,6 +770,18 @@
       "oS" : 0,
       "pg" : 0
     },
+    "\/src\/vendors\/bootstrap\/_colors.scss" : {
+      "aP" : 0,
+      "co" : 0,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/src\/vendors\/bootstrap\/_colors.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0
+    },
     "\/src\/vendors\/bootstrap\/_form-control.scss" : {
       "aP" : 0,
       "co" : 0,
@@ -778,6 +790,18 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/src\/vendors\/bootstrap\/_form-control.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0
+    },
+    "\/src\/vendors\/bootstrap\/_modal.scss" : {
+      "aP" : 0,
+      "co" : 0,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/src\/vendors\/bootstrap\/_modal.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0

@@ -1,0 +1,13 @@
+// extends bootstrap colors
+
+$color-map: (
+    'transparent' : transparent,
+);
+
+
+
+@each $color, $value in $color-map {
+    .bg-#{$color} {
+        background-color: $value !important;
+    }
+}
