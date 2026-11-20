@@ -1,45 +1,86 @@
-$form-control-border-color: #ced4da;
+// =============================================================================
+// Bootstrap 4 — buttons
+// -----------------------------------------------------------------------------
+// Bootstrap bakes its colours into each .btn-* rule, so these rules replace
+// them (same selectors, loaded later) with versions that read Bootstrap's
+// :root variables (--primary, --danger…). Dash core sets those variables;
+// a brand file overrides the ones it wants. Unset = stock Bootstrap.
+// =============================================================================
 
-.btn {
-    &-xs {
-        padding: calc(.25rem * 0.75) calc(.5rem * 0.75)!important;
-        font-size: calc(.875rem * 0.85)!important; 
+@use 'sass:map';
+@use '../../abstracts/buttons' as btn;
+
+// Colour name → text on top of it, and what to mix in on hover/active
+// (black darkens; white lightens, for colours too dark to darken).
+$btn-colors: (
+    primary:   (text: #fff,    mix: #000),
+    secondary: (text: #fff,    mix: #000),
+    success:   (text: #fff,    mix: #000),
+    info:      (text: #fff,    mix: #000),
+    warning:   (text: #212529, mix: #000),
+    danger:    (text: #fff,    mix: #000),
+    light:     (text: #212529, mix: #000),
+    dark:      (text: #fff,    mix: #fff),
+);
+
+@each $name, $opts in $btn-colors {
+    $base:   var(--#{$name});
+    $text:   map.get($opts, text);
+    $mix:    map.get($opts, mix);
+    $hover:  color-mix(in srgb, #{$base}, #{$mix} 15%);
+    $active: color-mix(in srgb, #{$base}, #{$mix} 20%);
+    $ring:   0 0 0 .2rem color-mix(in srgb, #{$base} 50%, transparent);
+
+    // -- Solid -----------------------------------------
+    .btn-#{$name} {
+        @include btn.variant(
+            $bg: $base, $border: $base, $text: $text,
+            $hover-bg: $hover,
+            $active-bg: $active,
+            $ring: $ring
+        );
     }
 
-    &-icon {
-        width: 40px;
-        height: 38px;
-        font-size: 80%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-
-        &.btn-sm {
-            width: 30px;
-            height: 30px;
-            font-size: 75%;
-        }
-
-        &.btn-xs {
-            width: 23px;
-            height: 23px;
-            font-size: 70%;
-        }
+    // -- Outline ---------------------------------------
+    .btn-outline-#{$name} {
+        @include btn.variant(
+            $bg: transparent, $border: $base, $text: $base,
+            $hover-bg: $base, $hover-text: $text,
+            $ring: $ring
+        );
     }
+}
 
+// -- Link button -----------------------------------------
+.btn-link {
+    color: var(--primary);
 
-    &-outline {
-        &-form {
-            border-color: $form-control-border-color !important;
-            background-color: var(--white) !important;
-
-            &.active {
-                background-color: var(--primary) !important;
-                color: var(--white)!important;
-                border-color: var(--primary) !important;
-            }
-        }
+    &:hover {
+        color: color-mix(in srgb, var(--primary), #000 20%);
     }
+}
 
+// -- Form button (sits with form controls) ----------------------------------
+.btn-outline-form {
+    @include btn.variant(
+        $bg: var(--white), $border: var(--t-input-border-color), $text: var(--t-color-base-dark),
+        $hover-bg: var(--t-color-gray-100), $hover-border: var(--t-input-border-color),
+        $active-bg: var(--primary), $active-text: var(--white),
+        $ring: 0 0 0 .2rem var(--t-input-focus-ring-color)   // the same ring as the inputs
+    );
+}
+
+.btn-icon {
+    --btn-icon-size: 2.375rem;   // 38px, same as .btn
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--btn-icon-size);
+    height: var(--btn-icon-size);
+    padding: 0;
+    font-size: 80%;
+
+    &.btn-lg { --btn-icon-size: 3rem;    font-size: 90%; }  // 48px
+    &.btn-sm { --btn-icon-size: 1.9375rem; font-size: 75%; } // 31px
+    &.btn-xs { --btn-icon-size: 1.4375rem; font-size: 70%; } // 23px
 }

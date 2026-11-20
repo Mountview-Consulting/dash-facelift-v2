@@ -1,0 +1,51 @@
+// =============================================================================
+// Bootstrap 4 — badge
+// -----------------------------------------------------------------------------
+// Same idea as _buttons.scss: Bootstrap bakes its colours into each .badge-*
+// rule, so these replace them (same selectors, loaded later) with versions
+// that read Bootstrap's :root variables (--primary, --danger…). Dash core
+// sets those; a brand file overrides the ones it wants. Unset = stock
+// Bootstrap.
+// =============================================================================
+
+@use 'sass:map';
+
+// Colour name → text on top of it, and what to mix in on hover (link badges
+// only). Black darkens; white lightens, for colours too dark to darken.
+// Same values as $btn-colors in _buttons.scss — keep the two in step.
+$badge-colors: (
+    primary:   (text: #fff,    mix: #000),
+    secondary: (text: #fff,    mix: #000),
+    success:   (text: #fff,    mix: #000),
+    info:      (text: #fff,    mix: #000),
+    warning:   (text: #212529, mix: #000),
+    danger:    (text: #fff,    mix: #000),
+    light:     (text: #212529, mix: #000),
+    dark:      (text: #fff,    mix: #fff),
+);
+
+@each $name, $opts in $badge-colors {
+    $base:  var(--#{$name});
+    $text:  map.get($opts, text);
+    $hover: color-mix(in srgb, #{$base}, #{map.get($opts, mix)} 15%);
+
+    .badge-#{$name} {
+        color: $text;
+        background-color: $base;
+
+        // Only <a class="badge"> reacts; a <span> badge has no hover.
+        @at-root a#{&} {
+            &:hover,
+            &:focus {
+                color: $text;
+                background-color: $hover;
+            }
+
+            &:focus,
+            &.focus {
+                outline: 0;
+                box-shadow: 0 0 0 .2rem color-mix(in srgb, #{$base} 50%, transparent);
+            }
+        }
+    }
+}

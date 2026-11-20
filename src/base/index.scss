@@ -9,13 +9,27 @@ body {
     overscroll-behavior: none;
 }
 
+// Replaces both of Bootstrap reboot's link rules (a, a:hover), which bake in
+// #007bff / #0056b3. Same selectors, loaded later, so these win.
 a {
-    color: var(--primary);
+    color: var(--t-link-color);
+
+    &:hover {
+        color: var(--t-link-hover-color);
+    }
 
     &[disabled] {
         pointer-events: none;
         opacity: 0.5;
     }
+}
+
+// Native checkboxes and radios (.form-check-input). Neither Bootstrap nor
+// Dash colours them, so the browser uses its own blue (or the OS accent).
+// Not a token: every brand wants these in its primary.
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: var(--primary);
 }
 
 hr {

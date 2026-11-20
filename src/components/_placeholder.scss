@@ -11,8 +11,13 @@ $placeholder-dark-color: #000;
     min-height: 1em;
     vertical-align: middle;
     cursor: wait;
-    background-color: currentcolor;
     opacity: $placeholder-opacity-max;
+
+    // Token, not BS5's currentcolor, so every placeholder looks the same.
+    // :not(.btn): a button-shaped placeholder keeps its button's colour.
+    &:not(.btn) {
+        background-color: var(--t-placeholder-bg-color);
+    }
 
     &.btn::before {
         display: inline-block;

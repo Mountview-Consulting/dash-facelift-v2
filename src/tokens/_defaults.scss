@@ -1,3 +1,5 @@
+@use 'sass:list';
+
 // =============================================================================
 // Theme tokens — defaults
 // -----------------------------------------------------------------------------
@@ -9,6 +11,24 @@
 // reading a new one.
 // =============================================================================
 
+// ── Chart palettes ─────────────────────────────────────────────────────────
+// Printed as numbered tokens below: --t-chart-cat-1…10, --t-chart-seq-1…9,
+// --t-chart-div-1…9. d3's own schemes, so a brand that sets nothing still
+// gets working charts. A brand file overrides them with its own lists.
+//   cat  categorical: one colour per thing (sources, brands). d3.schemeCategory10
+//   seq  sequential: light (low) to dark (high). d3.schemeGreens[9]
+//   div  diverging: low / middle / high, middle neutral. d3.schemeRdBu[9]
+$chart-cat: (#1f77b4, #ff7f0e, #2ca02c, #d62728, #9467bd, #8c564b, #e377c2, #7f7f7f, #bcbd22, #17becf);
+$chart-seq: (#f7fcf5, #e5f5e0, #c7e9c0, #a1d99b, #74c476, #41ab5d, #238b45, #006d2c, #00441b);
+$chart-div: (#b2182b, #d6604d, #f4a582, #fddbc7, #f7f7f7, #d1e5f0, #92c5de, #4393c3, #2166ac);
+
+// Prints one palette as --t-chart-<name>-1, -2… Brand files use it too.
+@mixin chart-palette($name, $colours) {
+    @for $i from 1 through list.length($colours) {
+        --t-chart-#{$name}-#{$i}: #{list.nth($colours, $i)};
+    }
+}
+
 :where(:root) {
     // ── Colour ──────────────────────────────────────────────────────────────
     --t-color-base-dark:  #212529;
@@ -17,6 +37,61 @@
     --t-color-gray-200:   #e7e7e7;
     --t-color-gray-300:   #b4b8bf;
     --t-color-gray-400:   #9ba0aa;
+
+    // ── Text ────────────────────────────────────────────────────────────────
+    --t-text-muted-color: var(--gray);   // Bootstrap's .text-muted grey (#6c757d)
+
+    // ── Display (big numbers) ───────────────────────────────────────────────
+    // .display-1…7 sizes, plus weight and line-height for every .display-*.
+    // Sizes 1–4 are Bootstrap's own values and 5–7 Dash's original extensions,
+    // so a brand that sets nothing keeps the same sizes. The weight is not:
+    // 800 is Dash's choice (Bootstrap's is a light 300).
+    --t-display-1-size:      6rem;
+    --t-display-2-size:      5.5rem;
+    --t-display-3-size:      4.5rem;
+    --t-display-4-size:      3.5rem;
+    --t-display-5-size:      2rem;
+    --t-display-6-size:      1.5rem;
+    --t-display-7-size:      1.2rem;
+    --t-display-weight:      800;   // Dash's, not Bootstrap's 300
+    --t-display-line-height: 1.2;
+
+    // ── Placeholder (loading) ───────────────────────────────────────────────
+    // One fixed colour everywhere, instead of BS5's currentcolor (which made
+    // placeholders green in .text-success, white on dark…).
+    --t-placeholder-bg-color: var(--gray);
+
+    // ── Links ───────────────────────────────────────────────────────────────
+    // Plain <a> only; component links (.nav-link, .page-link…) have their own.
+    // 30% black lands close to Bootstrap's own hover (#007bff → #0056b3).
+    --t-link-color:       var(--primary);
+    --t-link-hover-color: color-mix(in srgb, var(--t-link-color), #000 30%);
+
+    // ── Forms ───────────────────────────────────────────────────────────────
+    // .form-control and .custom-select. The focus colours follow --primary, so
+    // a brand that changes --primary gets a matching focus ring (Bootstrap's
+    // own is a fixed #80bdff blue).
+    --t-input-border-color:       #ced4da;   // Bootstrap's
+    --t-input-focus-border-color: color-mix(in srgb, var(--primary), #fff 50%);
+    --t-input-focus-ring-color:   color-mix(in srgb, var(--primary) 25%, transparent);
+
+    // ── Nav pills ───────────────────────────────────────────────────────────
+    --t-nav-pills-active-bg-color:   var(--primary);
+    --t-nav-pills-active-text-color: #fff;
+
+    // ── Nav tabs ────────────────────────────────────────────────────────────
+    // Bootstrap's own look by default: no strip, link-coloured inactive tabs,
+    // a white active tab. A brand can shade the strip (bg + padding) so the
+    // white active tab stands out of it, like browser tabs.
+    --t-nav-tabs-bg-color:                transparent;
+    --t-nav-tabs-padding:                 0;   // strip padding, around the tabs
+    --t-nav-tabs-border-color:            #dee2e6;
+    --t-nav-tabs-link-color:              var(--t-link-color);
+    --t-nav-tabs-link-hover-color:        var(--t-link-hover-color);
+    --t-nav-tabs-link-hover-bg-color:     transparent;
+    --t-nav-tabs-link-hover-border-color: #e9ecef;
+    --t-nav-tabs-active-color:            #495057;
+    --t-nav-tabs-active-bg-color:         #fff;
 
     // ── Header ──────────────────────────────────────────────────────────────
     --t-header-bg-color:        var(--dark);
@@ -40,4 +115,9 @@
 
     // ── Main ────────────────────────────────────────────────────────────────
     --t-main-bg-color: var(--t-color-base-light);
+
+    // ── Charts ──────────────────────────────────────────────────────────────
+    @include chart-palette(cat, $chart-cat);
+    @include chart-palette(seq, $chart-seq);
+    @include chart-palette(div, $chart-div);
 }

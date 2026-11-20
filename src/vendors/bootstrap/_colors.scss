@@ -1,10 +1,58 @@
-// extends bootstrap colors
+// =============================================================================
+// Bootstrap 4 — colour utilities (text-*, bg-*)
+// -----------------------------------------------------------------------------
+// Bootstrap's utilities/_text.scss and _background.scss bake their colours in,
+// like buttons and badges. These replace them (same selectors, loaded later)
+// with versions that read Bootstrap's :root variables (--primary, --danger…).
+// Dash core sets those; a brand file overrides the ones it wants.
+// Unset = stock Bootstrap.
+//
+// !important: Bootstrap's own utilities use it, so these must too to win.
+// =============================================================================
 
+$theme-colors: primary, secondary, success, info, warning, danger, light, dark;
+
+@each $name in $theme-colors {
+    $base: var(--#{$name});
+
+    // ── Text ────────────────────────────────────────────────────────────────
+    .text-#{$name} {
+        color: $base !important;
+    }
+
+    // Links darken on hover. 30% black ≈ Bootstrap's darken(15%).
+    a.text-#{$name} {
+        &:hover,
+        &:focus {
+            color: color-mix(in srgb, #{$base}, #000 30%) !important;
+        }
+    }
+
+    // ── Background ──────────────────────────────────────────────────────────
+    .bg-#{$name} {
+        background-color: $base !important;
+    }
+
+    // Links and buttons darken on hover. 20% black ≈ Bootstrap's darken(10%).
+    a.bg-#{$name},
+    button.bg-#{$name} {
+        &:hover,
+        &:focus {
+            background-color: color-mix(in srgb, #{$base}, #000 20%) !important;
+        }
+    }
+}
+
+// ── Muted text ──────────────────────────────────────────────────────────────
+// Not a theme colour, so it has its own token (--t-text-muted-color).
+.text-muted {
+    color: var(--t-text-muted-color) !important;
+}
+
+// ── Extensions (not in Bootstrap) ───────────────────────────────────────────
 $color-map: (
     'transparent' : transparent,
 );
-
-
 
 @each $color, $value in $color-map {
     .bg-#{$color} {

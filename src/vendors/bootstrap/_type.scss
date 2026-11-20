@@ -1,3 +1,26 @@
-.display-5 { font-size: 2rem;   font-weight: 300; line-height: 1.2; }
-.display-6 { font-size: 1.5rem; font-weight: 300; line-height: 1.2; }
-.display-7 { font-size: 1.2rem; font-weight: 300; line-height: 1.2; }
+// =============================================================================
+// Bootstrap 4 — display headings (.display-1…4) and Dash extensions (5…7)
+// -----------------------------------------------------------------------------
+// Bootstrap's _type.scss bakes these in (6rem / 300 / 1.2…). These replace
+// them, same selectors loaded later, with versions that read --t-display-*.
+// 5–7 aren't Bootstrap's; they continue the scale below display-4.
+// Unset = stock values. Used for big reporting values on cards.
+// =============================================================================
+
+// ── Shared ──────────────────────────────────────────────────────────────────
+// tabular-nums: every digit the same width, so stacked values line up and
+// don't shift when they update. It only affects digits.
+.display-1, .display-2, .display-3, .display-4,
+.display-5, .display-6, .display-7 {
+    font-weight: var(--t-display-weight);
+    line-height: var(--t-display-line-height);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.03em;
+}
+
+// ── Sizes ───────────────────────────────────────────────────────────────────
+@for $i from 1 through 7 {
+    .display-#{$i} {
+        font-size: var(--t-display-#{$i}-size);
+    }
+}

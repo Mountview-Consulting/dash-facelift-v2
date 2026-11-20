@@ -20,9 +20,11 @@
     > div {
         height: 100%;
         overflow-y: auto;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
 
         > ul.nav {
-            padding-top: 0.5rem;
+            padding-top: 0.3rem;
             min-height: 100%;
         }
     }
@@ -44,10 +46,13 @@
         font-size: var(--t-sidebar-font-size);
 
         .nav-link {
+            padding: 0.3rem 0.5rem;
             display: flex;
             font-size: inherit !important;
             font-weight: 400 !important;
             color: var(--t-sidebar-text-color);
+            border-radius: 0;
+            margin-bottom: .2rem;
 
             > .fa {
                 margin-top: 0.25em;
@@ -66,7 +71,7 @@
                 background-color: var(--t-sidebar-active-bg-color);
                 color: var(--t-sidebar-active-text-color);
                 border-left: var(--t-sidebar-active-border-color) solid var(--t-sidebar-active-border-width);
-                padding-left: calc(1rem - var(--t-sidebar-active-border-width));
+                padding-left: calc(0.5rem - var(--t-sidebar-active-border-width));
             }
         }
 

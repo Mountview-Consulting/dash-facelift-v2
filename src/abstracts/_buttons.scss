@@ -1,0 +1,54 @@
+@mixin variant(
+    // Resting
+    $bg,
+    $border,
+    $text,
+
+    // Hover: defaults to the resting look
+    $hover-bg:     $bg,
+    $hover-border: $hover-bg,
+    $hover-text:   $text,
+
+    // Active / pressed: defaults to the hover look
+    $active-bg:     $hover-bg,
+    $active-border: $hover-border,
+    $active-text:   $hover-text,
+
+    // Focus ring: none unless given
+    $ring: none
+) {
+    color: $text;
+    background-color: $bg;
+    border-color: $border;
+
+    &:hover {
+        color: $hover-text;
+        background-color: $hover-bg;
+        border-color: $hover-border;
+    }
+
+    &:focus,
+    &.focus {
+        box-shadow: $ring;
+    }
+
+    // After :hover, so a disabled button doesn't react to the mouse
+    &.disabled,
+    &:disabled {
+        color: $text;
+        background-color: $bg;
+        border-color: $border;
+    }
+
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    .show > &.dropdown-toggle {
+        color: $active-text;
+        background-color: $active-bg;
+        border-color: $active-border;
+
+        &:focus {
+            box-shadow: $ring;
+        }
+    }
+}
