@@ -62,7 +62,7 @@ $brand-colors: (
     --t-sidebar-active-text-color:      var(--brand-white);
     --t-sidebar-active-border-color:    var(--brand-opal-uk);
     --t-sidebar-active-border-width:    3px;
-    --t-sidebar-hover-bg-color:         var(--brand-gray-800);
+    --t-sidebar-hover-bg-color:         color-mix(in srgb, var(--brand-gray-800), var(--brand-gray-700));   // halfway to active
     --t-sidebar-hover-text-color:       var(--brand-white);
 
     // Main
@@ -104,7 +104,7 @@ $brand-colors: (
     --t-nav-tabs-border-color:            var(--brand-gray-300);
     --t-nav-tabs-link-color:              var(--brand-gray-700);
     --t-nav-tabs-link-hover-color:        var(--brand-gray-900);
-    --t-nav-tabs-link-hover-bg-color:     var(--brand-gray-300);
+    --t-nav-tabs-link-hover-bg-color:     var(--brand-gray-400);
     --t-nav-tabs-link-hover-border-color: transparent;
     --t-nav-tabs-active-color:            var(--brand-gray-900);
     --t-nav-tabs-active-bg-color:         var(--brand-white);

@@ -65,11 +65,13 @@
 // Pill button bars: buttons in a .nav-pills joined into one bordered bar,
 // like a .btn-group. Buttons only (the date picker, option buttons, report
 // charts), so navs made of links keep Bootstrap's plain pills.
+// Matches button.nav-link and plain .btn: older plugin markup (e.g. the
+// data dictionary filters) uses .btn, and v1 styled any pill button.
 //
 // Each button is a .btn-outline-form (_buttons.scss), built from the same
 // mixin and colours, so the two look and react alike. Only the selected
 // button differs: the nav pill colours rather than --primary.
-.nav-pills > .nav-item > button.nav-link {
+.nav-pills > .nav-item > :is(button.nav-link, .btn) {
     @include btn.variant(
         $bg: var(--white), $border: var(--t-input-border-color), $text: var(--t-color-base-dark),
         $hover-bg: var(--t-color-gray-100), $hover-border: var(--t-input-border-color),
@@ -89,20 +91,20 @@
 }
 
 // Round only the bar's outer corners
-.nav-pills > .nav-item:first-child > button.nav-link {
+.nav-pills > .nav-item:first-child > :is(button.nav-link, .btn) {
     margin-left: 0;
     border-top-left-radius: .25rem;
     border-bottom-left-radius: .25rem;
 }
-.nav-pills > .nav-item:last-child > button.nav-link {
+.nav-pills > .nav-item:last-child > :is(button.nav-link, .btn) {
     border-top-right-radius: .25rem;
     border-bottom-right-radius: .25rem;
 }
-.nav-pills.nav-sm > .nav-item:first-child > button.nav-link {
+.nav-pills.nav-sm > .nav-item:first-child > :is(button.nav-link, .btn) {
     border-top-left-radius: .2rem;
     border-bottom-left-radius: .2rem;
 }
-.nav-pills.nav-sm > .nav-item:last-child > button.nav-link {
+.nav-pills.nav-sm > .nav-item:last-child > :is(button.nav-link, .btn) {
     border-top-right-radius: .2rem;
     border-bottom-right-radius: .2rem;
 }
